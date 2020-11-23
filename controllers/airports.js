@@ -1,6 +1,6 @@
 const pool = require("../db/index");
 
-export function getAirports(req, res, next) {
+exports.getAirports = async(req, res, next) => {
     try {
         res.json(
             await new Promise((resolve, reject) => {
@@ -14,7 +14,6 @@ export function getAirports(req, res, next) {
             })
         );
     } catch (e) {
-        console.log(e);
-        res.sendStatus(500);
+        next(e);
     }
 }

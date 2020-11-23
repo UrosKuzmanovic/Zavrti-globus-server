@@ -1,6 +1,6 @@
 const pool = require("../db/index");
 
-export function getUsers(req, res) {
+exports.getUsers = async(req, res) => {
     try {
         res.json(
             await new Promise((resolve, reject) => {
@@ -17,9 +17,9 @@ export function getUsers(req, res) {
         console.log(e);
         res.sendStatus(500);
     }
-}
+};
 
-export function getUserById(req, res) {
+exports.getUserById = async(req, res) => {
     let id = req.params.id;
     try {
         res.json(
@@ -41,9 +41,9 @@ export function getUserById(req, res) {
         console.log(e);
         res.sendStatus(500);
     }
-}
+};
 
-export function signinUser(req, res) {
+exports.signinUser = async(req, res) => {
     try {
         res.json(
             await new Promise((resolve, reject) => {
@@ -63,9 +63,9 @@ export function signinUser(req, res) {
         console.log(e);
         res.sendStatus(500);
     }
-}
+};
 
-export function signupUser(req, res) {
+exports.signupUser = async(req, res) => {
     try {
         res.json(
             await new Promise((resolve, reject) => {
@@ -101,4 +101,4 @@ export function signupUser(req, res) {
         console.log(e);
         res.sendStatus(500);
     }
-}
+};

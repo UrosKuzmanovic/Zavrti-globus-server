@@ -26,5 +26,8 @@ routes.post("/new-trip", tripsController.postTrip); // promeniti u post trip
 
 routes.post("/update-trip", tripsController.updateTrip);
 
-module.exports = routes;
+routes.post("/inquiry-trips", tripsController.getInquiryTrips);
+
+routes.get("/all-inquiry-trips", tripsController.getAllInquiryTrips);
+
 module.exports = routes;
